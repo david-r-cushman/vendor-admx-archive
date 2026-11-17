@@ -25,6 +25,10 @@ jobs:
           Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
           Install-Module Pester -RequiredVersion 6.2.0 -Scope CurrentUser -Force
 
+      - name: Validate template version
+        shell: pwsh
+        run: ./scripts/Test-TemplateVersion.ps1
+
       - name: Run tests
         shell: pwsh
         run: ./scripts/Invoke-Tests.ps1

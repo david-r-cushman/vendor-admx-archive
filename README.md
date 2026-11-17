@@ -142,6 +142,26 @@ Install-Module Pester -RequiredVersion 6.2.0 -Scope CurrentUser
 The test runner disables Pester's unused Windows registry fixture, so tests do
 not require registry write access.
 
+## Archive-tooling versioning
+
+`VERSION` identifies the archive tooling baseline: scripts, tests, workflow,
+documentation, and AI guidance. It does not identify a vendor release under
+`versions/`. This project uses [Semantic Versioning](https://semver.org/); keep
+`VERSION` and the matching dated entry in `CHANGELOG.md` aligned.
+
+Before a release change is delivered, run:
+
+```powershell
+./scripts/Test-TemplateVersion.ps1
+./scripts/Invoke-Tests.ps1
+```
+
+After the release change has merged to `main`, create a lightweight `vX.Y.Z`
+tag on the merged commit, validate it with
+`./scripts/Test-TemplateVersion.ps1 -CheckTag`, and publish a GitHub Release
+using the corresponding `CHANGELOG.md` section as its notes. Tags and GitHub
+Releases are manual maintainer actions.
+
 ## Governance
 
 After the GitHub Actions test workflow is passing, enable GitHub's **Template

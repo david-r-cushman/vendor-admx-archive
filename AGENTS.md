@@ -76,3 +76,27 @@ format-specific extraction automation without an explicit request.
   `./scripts/Invoke-Tests.ps1` after script or test changes.
 - Before handoff, run `git diff --check`, report validation results, and list
   uncommitted changes.
+
+## Versioning and releases
+
+`VERSION` identifies the archive tooling baseline, not vendor distributions
+under `versions/`. Use Semantic Versioning: major for incompatible tooling
+interfaces or workflows, minor for backward-compatible capabilities, and patch
+for backward-compatible fixes and documentation-only corrections.
+
+When preparing a release, first confirm that the working tree is clean, the
+branch is current with `origin/main`, and the planned version is unambiguous.
+Update `VERSION` and add a matching `## X.Y.Z - YYYY-MM-DD` entry in
+`CHANGELOG.md`; keep unfinished notes under `Unreleased`. Then run:
+
+```powershell
+./scripts/Test-TemplateVersion.ps1
+./scripts/Invoke-Tests.ps1
+git diff --check
+```
+
+Only after the release change is merged to `main` and the user explicitly
+directs release finalization may AI create and push the lightweight `vX.Y.Z`
+tag, run `./scripts/Test-TemplateVersion.ps1 -CheckTag`, and publish a
+non-draft GitHub Release using the matching changelog section. This guidance
+does not grant authority to commit or push outside that explicit direction.
