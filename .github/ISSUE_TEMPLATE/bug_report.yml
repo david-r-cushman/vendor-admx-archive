@@ -1,0 +1,48 @@
+name: Bug report
+description: Report a reproducible problem with the archive tooling or template.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Do not report security vulnerabilities
+        here; follow the repository's SECURITY.md policy instead.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the observed problem.
+      placeholder: Describe what happened and why it is unexpected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest safe sequence that reproduces the problem.
+      placeholder: |
+        1. Run ...
+        2. Provide ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: Describe what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include PowerShell version, operating system, and relevant tool versions. Remove credentials and vendor artifacts.
+      placeholder: |
+        PowerShell:
+        Operating system:
+        Pester:
+    validations:
+      required: true

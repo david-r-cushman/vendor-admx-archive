@@ -9,6 +9,11 @@ not version vendor distributions stored under `versions/`.
 
 ## Unreleased
 
+### Added
+
+- Added contribution and security policies plus a public bug-report form for
+  the template's community-health baseline.
+
 ## 0.1.0 - 2026-11-17
 
 ### Added
