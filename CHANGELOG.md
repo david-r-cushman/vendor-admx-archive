@@ -18,6 +18,12 @@ not version vendor distributions stored under `versions/`.
 
 - Linked the template README to its public, fictional demonstration archive.
 
+- Explained the archive's operational-continuity purpose and its boundary from
+  Intune, Group Policy, Active Directory, and deployment-state recovery.
+
+- Corrected the generated registration-splat variable name in documentation
+  and comment-based help.
+
 ## 0.1.0 - 2026-11-17
 
 ### Added
