@@ -6,6 +6,12 @@ created from this template preserves original vendor downloads, records their
 provenance and SHA-256 hashes, and verifies that registered downloads have not
 changed.
 
+> **See it in action:**
+> [demo-admx-archive](https://github.com/david-r-cushman/demo-admx-archive)
+> is a public, populated example built from this template. It uses self-authored,
+> fictional ADMX and ADML distributions to demonstrate the multi-release archive
+> workflow.
+
 The archive does not establish vendor authenticity, download releases, extract
 packages, deploy templates, or diagnose every file in the repository. Git and
 GitHub provide history, review, access control, and governance after a release

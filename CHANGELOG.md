@@ -14,6 +14,10 @@ not version vendor distributions stored under `versions/`.
 - Added contribution and security policies plus a public bug-report form for
   the template's community-health baseline.
 
+### Changed
+
+- Linked the template README to its public, fictional demonstration archive.
+
 ## 0.1.0 - 2026-11-17
 
 ### Added
