@@ -52,7 +52,7 @@ Creates a new release layout with source/ and extracted/ folders.
 .EXAMPLE
 PS> .\scripts\Register-AdmxRelease.ps1 @registration
 
-Registers the release using values prepared in the $registration hashtable.
+Registers the release using values prepared in the $Params hashtable.
 
 .EXAMPLE
 PS> .\scripts\Register-AdmxRelease.ps1 -GenerateSplat

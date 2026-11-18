@@ -12,6 +12,24 @@ changed.
 > fictional ADMX and ADML distributions to demonstrate the multi-release archive
 > workflow.
 
+## Why archive administrative templates?
+
+Administrative templates are deployment dependencies. Organizations might
+[import custom ADMX and ADML files into Intune](https://learn.microsoft.com/en-us/intune/device-configuration/settings-catalog/import-custom-admx-templates)
+or deploy them to a [Group Policy Central Store](https://learn.microsoft.com/en-us/troubleshoot/windows-client/group-policy/create-and-manage-central-store).
+Preserving the original vendor distribution separately from those management
+platforms keeps a known release and its provenance available when it must be
+re-supplied after accidental deletion, replacement, corruption, disaster
+recovery, or a vendor changes or removes a download. Microsoft also recommends
+maintaining a repository of application ADMX/ADML files for Group Policy use.
+
+This archive preserves the template artifacts, their release provenance, and
+their integrity baseline. It does not export, back up, restore, recreate, or
+manage Intune configuration profiles or assignments, Group Policy Objects,
+Active Directory, or deployed Central Store state. It instead provides the
+known source input required by the applicable platform's recovery or deployment
+process.
+
 The archive does not establish vendor authenticity, download releases, extract
 packages, deploy templates, or diagnose every file in the repository. Git and
 GitHub provide history, review, access control, and governance after a release
@@ -65,7 +83,7 @@ content under `extracted/`.
 
 ### 3. Generate and edit a registration splat
 
-`-GenerateSplat` writes a ready-to-edit parameter hashtable. Within
+`-GenerateSplat` writes a ready-to-edit `$Params` hashtable. Within
 `DownloadUrls`, each hashtable key is a source-relative file path and each value
 is that file's direct download URL. Replace the two generated placeholder pairs,
 add more pairs as needed, or clear the hashtable when direct download URLs are
@@ -92,7 +110,7 @@ depends on the local desktop environment and is not required by this project.
 Fill in the generated splat, or prepare one directly:
 
 ```powershell
-$registration = @{
+$Params = @{
     ReleaseId     = '1.2.3'
     Vendor        = 'Example Vendor'
     Product       = 'Example Product'
@@ -103,7 +121,7 @@ $registration = @{
     }
 }
 
-./scripts/Register-AdmxRelease.ps1 @registration
+./scripts/Register-AdmxRelease.ps1 @Params
 ```
 
 Registration creates `manifest.json` once and refuses to overwrite it. On
