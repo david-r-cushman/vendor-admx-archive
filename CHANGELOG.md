@@ -24,6 +24,9 @@ not version vendor distributions stored under `versions/`.
 - Corrected the generated registration-splat variable name in documentation
   and comment-based help.
 
+- Renamed the GitHub Actions workflow to Pester Tests and added its status
+  badge to the README.
+
 ## 0.1.0 - 2026-11-17
 
 ### Added

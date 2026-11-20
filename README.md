@@ -1,5 +1,7 @@
 # Vendor Administrative Template Archive
 
+[![Pester Tests](https://github.com/david-r-cushman/vendor-admx-archive/actions/workflows/pester.yml/badge.svg?branch=main)](https://github.com/david-r-cushman/vendor-admx-archive/actions/workflows/pester.yml)
+
 This repository is a reusable template for archiving one vendor's
 administrative-template distributions across multiple releases. A repository
 created from this template preserves original vendor downloads, records their
