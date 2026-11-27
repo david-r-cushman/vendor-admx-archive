@@ -72,7 +72,7 @@ format-specific extraction automation without an explicit request.
   changes.
 - Do not change existing archived releases, their source files, or manifests
   unless explicitly directed by the user.
-- Use PowerShell 7.4 or later and Pester 6.2.0. Run
+- Use PowerShell 7.6 LTS and Pester 6.2.0. Run
   `./scripts/Invoke-Tests.ps1` after script or test changes.
 - Before handoff, run `git diff --check`, report validation results, and list
   uncommitted changes.

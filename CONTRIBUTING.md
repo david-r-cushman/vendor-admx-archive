@@ -14,7 +14,7 @@ workflow small, format-neutral, safe by default, and broadly reusable.
 
 ## Development and validation
 
-For script or test changes, use PowerShell 7.4 or later and run:
+For script or test changes, use PowerShell 7.6 LTS and run:
 
 ```powershell
 ./scripts/Test-TemplateVersion.ps1
