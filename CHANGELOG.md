@@ -9,6 +9,8 @@ not version vendor distributions stored under `versions/`.
 
 ## Unreleased
 
+## 0.1.1 - 2026-11-27
+
 ### Added
 
 - Added contribution and security policies plus a public bug-report form for
