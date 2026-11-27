@@ -9,6 +9,11 @@ not version vendor distributions stored under `versions/`.
 
 ## Unreleased
 
+### Fixed
+
+- Restored the default PSGallery registration in CI when a hosted runner does
+  not provide it before installing Pester.
+
 ## 0.1.1 - 2026-11-27
 
 ### Added

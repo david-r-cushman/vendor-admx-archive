@@ -25,6 +25,9 @@ jobs:
           if ($PSVersionTable.PSVersion.Major -ne 7 -or $PSVersionTable.PSVersion.Minor -ne 6) {
             throw "Expected PowerShell 7.6.x, found $($PSVersionTable.PSVersion)."
           }
+          if (-not (Get-PSRepository -Name PSGallery -ErrorAction SilentlyContinue)) {
+            Register-PSRepository -Default -ErrorAction Stop
+          }
           Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
           Install-Module Pester -RequiredVersion 6.2.0 -Scope CurrentUser -Force
 
