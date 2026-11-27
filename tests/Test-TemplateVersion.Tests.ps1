@@ -34,7 +34,7 @@ Describe 'Test-TemplateVersion' {
     It 'validates the template metadata in the repository' {
         $Result = & $ValidatorPath
 
-        $Result.Version | Should -Be '0.1.0'
+        $Result.Version | Should -Be '0.1.1'
         $Result.MetadataValid | Should -BeTrue
         $Result.TagChecked | Should -BeFalse
         $Result.TagValid | Should -BeNullOrEmpty
