@@ -16,6 +16,8 @@ not version vendor distributions stored under `versions/`.
 
 ### Changed
 
+- Pinned CI to Ubuntu 26.04 and PowerShell 7.6 LTS while retaining Pester 6.2.0.
+
 - Linked the template README to its public, fictional demonstration archive.
 
 - Explained the archive's operational-continuity purpose and its boundary from

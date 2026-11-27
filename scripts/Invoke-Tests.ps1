@@ -3,7 +3,7 @@
 Runs the repository's Pester test suite.
 
 .DESCRIPTION
-Imports Pester 6.2.0, requires PowerShell 7.4 or later, and runs all tests in
+Imports Pester 6.2.0, requires PowerShell 7.6.x, and runs all tests in
 the tests directory. The Pester TestRegistry fixture is disabled because this
 repository does not use it and its registry write requirement is unnecessary.
 
@@ -24,8 +24,8 @@ $RequiredPesterVersion = [version]'6.2.0'
 $RepositoryRoot = Split-Path -Path $PSScriptRoot -Parent
 $TestPath = Join-Path -Path $RepositoryRoot -ChildPath 'tests'
 
-if ($PSVersionTable.PSVersion -lt [version]'7.4.0') {
-    throw 'PowerShell 7.4 or later is required to run this test suite.'
+if ($PSVersionTable.PSVersion.Major -ne 7 -or $PSVersionTable.PSVersion.Minor -ne 6) {
+    throw ("PowerShell 7.6.x is required to run this test suite. Detected {0}." -f $PSVersionTable.PSVersion)
 }
 
 try {

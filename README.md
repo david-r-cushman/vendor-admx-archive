@@ -152,7 +152,7 @@ original source file(s) and manifest together.
 
 ## Run tests
 
-The test suite requires PowerShell 7.4 or later and Pester 6.2.0. Install the
+The test suite requires PowerShell 7.6 LTS and Pester 6.2.0. Install the
 required Pester version once when it is not already available:
 
 ```powershell
